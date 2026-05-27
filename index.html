@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript - Gestion de productos 2.</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="Imagenes/icono.png" type="image/png">
+    
+</head>
+<body>
+    <h1><span class="amarillo">JavaScript</span> - Sistema de Gestión de Productos.</h1>
+    <p>
+       Se debe desarrollar un programa en <span class="amarillo">JavaScript</span> que permita administrar un listado de productos mediante un menú de opciones. Además, la opción 4 deberá desplegar un submenú con funcionalidades adicionales.
+    </p>
+   
+    <br>
+    <hr>
+    <br>
+    <b>Datos iniciales</b><br>
+    <p>
+        El programa parte del siguiente array de productos:
+    </p>
+<pre><code class="cpp">1    <span class="rojo">const</span> productos = <span class="amarillo">[</span>
+2       <span class="violeta">{</span>nombre: <span class="celeste">"Mouse"</span>, categoria: <span class="celeste">"tecnologia"</span>, precio: <span class="verdeC">1000</span>, stock: <span class="verdeC">10</span> <span class="violeta">}</span>,
+3       <span class="violeta">{</span>nombre: <span class="celeste">"Teclado"</span>, categoria: <span class="celeste">"tecnologia"</span>, precio: <span class="verdeC">2000</span>, stock: <span class="verdeC">5</span> <span class="violeta">}</span>,
+4       <span class="violeta">{</span>nombre: <span class="celeste">"Monitor"</span>, categoria: <span class="celeste">"tecnologia"</span>, precio: <span class="verdeC">50000</span>, stock: <span class="verdeC">0</span> <span class="violeta">}</span>,
+5       <span class="violeta">{</span>nombre: <span class="celeste">"Silla"</span>, categoria: <span class="celeste">"hogar"</span>, precio: <span class="verdeC">15000</span>, stock: <span class="verdeC">2</span> <span class="violeta">}</span>
+6   <span class="amarillo">]</span>;</code></pre>
+    <p>
+        Cada producto es un objeto con las propiedades.
+    </p>
+    <ul>
+        <li><code class="gris">nombre</code></li>
+        <li><code class="gris">categoria</code></li>
+        <li><code class="gris">precio</code></li>
+        <li><code class="gris">stock</code></li>
+    </ul>
+    <br>
+    <hr>
+    <br>
+    <h3>Funcionamiento General.</h3>
+    <p>
+        El programa debe ejecutarse dentro de un ciclo (<span class="gris">do-while</span>) que muestre un menú de opciones.
+    </p>
+    <fieldset>
+        <legend>Menú</legend>
+        <ol>
+            <li>Agregar producto.</li>
+            <li>Eliminar producto.</li>
+            <li>Modificar producto.</li>
+            <li>Más opciones.</li>
+            <li>Mostrar productos y salir.</li>
+        </ol>
+    </fieldset>
+    <h3>Submenú de funciones adicionales.</h3>
+    <p>
+        El sistema deberá mostrar un submenú con funcionalidades extra para trabajar el array de productos utilizando principalmente <span class="violeta">forEach</span><span class="dorado">()</span>
+    </p>
+    <p>
+        En <code class="gris">Más opciones</code> mostrará las siguientes opciones:
+    </p>
+    <fieldset>
+        <legend>SUBMenú</legend>
+        <ol>
+            <li>Mostrar productos sin stock.</li>
+            <li>Buscar productos por categoría.</li>
+            <li>Aplicar aumento de precio por nombre.</li>
+            <li>Mostrar producto más caro.</li>
+            <li>Volver al menú anterior.</li>
+        </ol>
+    </fieldset>
+    <h2>Detalle de cada funcion</h2>
+    <ol>
+        <li>
+            <b>Mostrar productos sin stock</b>
+            <br>
+            <p>
+                El sistema deberá recorrer el array de productos y mostrar únicamente aquellos productos cuyo stock sea igual a <code class="gris">0</code>.
+            </p>
+            <p>
+                Los productos encontrados deberán mostrarse en formato de tabla en la consola.
+            </p>
+            <p>
+                Además, esta opción deberá finalizar la ejecución completa del programa, saliendo tanto del submenú como del menú principal.
+            </p>
+            <p>
+                <b>Use <span class="violeta">forEach</span><span class="dorado">()</span></b>
+            </p>
+            <hr>
+            <br>
+        </li>
+        <li>
+            <b>Buscar productos por categoría</b>
+            <br>
+            <p>
+                Solicitar al usuario una categoría y mostrar todos los productos que pertenezcan a ella, por consola en formato tabla
+            </p>
+            <p>
+                Esta opción deberá finalizar la ejecución completa del programa, saliendo tanto del submenú como del menú principal.
+            </p>
+            <p>
+                <b>Use <span class="violeta">forEach</span><span class="dorado">()</span></b>
+            </p>
+            <hr>
+            <br>
+        </li>
+        <li>
+            <b>Aplicar aumento por nombre.</b>
+            <p>
+                Solicitar al usuario el nombre de un producto y un porcentaje de aumento.
+            </p>
+            <p>
+                Luego recorrer el array y generar un nuevo array de productos con los valores actualizados, manteniendo el principio de inmutabilidad y programación funcional, evitando modificar el array original.
+            </p>
+            <p>
+                El nuevo array deberá conservar todos los productos originales y únicamente actualizar el precio del producto coincidente.
+            </p>
+            <p>
+                Además, la opción <code class="gris">Mostrar productos y salir</code> deberá mostrar este nuevo array actualizado
+            </p>
+            <p>
+               <b>Use <span class="violeta">forEach</span><span class="dorado">()</span></b>
+            </p>
+            <hr>
+           
+        </li>
+        <li>
+            <b>Mostrar producto más caro</b>
+            <p>
+                El sistema deberá recorrer el array de productos y mostrar el producto con el precio más alto utilizando <code class="gris">console.table()</code>
+            </p>
+            <p>
+                Si previamente se aplicó la opción <code class="gris">Aplicar aumento por nombre</code>, el cálculo deberá realizarse sobre el nuevo array actualizado.
+            </p>
+            <p>
+                En vaso contrario, deberá utilizarse el array original de productos.
+            </p>
+            <p>
+               <b>Use <span class="violeta">forEach</span><span class="dorado">()</span></b>
+               <hr>
+            
+            </p>
+        </li>
+        <li>
+            <b>Volver al menú anterior</b>
+            <p>
+                El sistema deberá regresar al menú principal sin finalizar la ejecución del programa.
+            </p>
+        </li>
+    </ol>
+    <br>
+    <hr>
+    <br>
+    <h2>Preguntas teóricas:</h2>
+    <ol>
+        <li>¿Qué es la programación funcional?</li>
+        <li>¿Qué significa inmutabilidad en programación?</li>
+        <li>¿Como funciona <span class="violeta">forEach</span><span class="dorado">()</span> en <span class="amarillo">JavaScript?</span></li>
+        <li>¿Qué diferencia existe entre modificar un array original y crear uno nuevo ?</li>
+    </ol>
+    
+    <hr>
+    <br>
+</body>
+</html>
+
